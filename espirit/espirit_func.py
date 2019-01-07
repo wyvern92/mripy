@@ -45,7 +45,7 @@ def espirit_2d( xcrop, x_shape, nsingularv = 150, hkwin_shape = (16,16), pad_bef
     #U, s, V = scipy.sparse.linalg.svds(hmtx, nsingularv )
     #timing.stop().display('SVD ')
     for k in range(len(s)):
-        if s[k] > s[0]*nsing_th:
+        if s[k] > s[0]*nsigv_th: # I guess this is a typo
             nsingularv = k
     print('exctract %g out of %g singular vectors:' % (nsingularv, len(s)))
     #S = np.diag(s)
